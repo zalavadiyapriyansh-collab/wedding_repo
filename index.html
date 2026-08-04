@@ -160,13 +160,20 @@
     font-style:italic;
   }
   .date-line{
-    margin:18px auto 0;
+    margin:10px auto 0;
     font-family:var(--sans);
     font-size:13px;
     letter-spacing:.08em;
     text-transform:uppercase;
     color:var(--ink-soft);
   }
+  .date-line a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .date-line a:hover{ color:var(--rose); border-color:var(--gold); }
   .sprig{
     margin-top:38px;
     color:var(--olive);
@@ -380,6 +387,10 @@
       <p class="eyebrow">You're invited to celebrate</p>
       <h1 class="names">Priyansh<span class="amp">&amp;</span>McKenzie</h1>
       <p class="tagline">A celebration of love, culture &amp; flavor.</p>
+      <p class="date-line">Saturday, August 8, 2026</p>
+      <p class="date-line">
+        <a href="https://maps.google.com/?q=Northland+Country+Club+3901+E+Superior+St+Duluth+MN+55804" target="_blank" rel="noopener">Northland Country Club — 3901 E Superior St, Duluth, MN 55804</a>
+      </p>
       <div class="sprig" aria-hidden="true">
         <svg width="72" height="20" viewBox="0 0 72 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 10 C 20 -2, 52 -2, 70 10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
