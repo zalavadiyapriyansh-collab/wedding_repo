@@ -293,6 +293,33 @@
     color:var(--gold);
   }
 
+  /* ---------- Gallery ---------- */
+  .gallery-section{ padding:32px 0 64px; }
+  .gallery-grid{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+  }
+  .gallery-grid a{
+    display:block;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    border-radius:6px;
+    border:1px solid var(--rule);
+  }
+  .gallery-grid img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .gallery-grid a:hover img{ transform:scale(1.05); }
+  @media (max-width:640px){
+    .gallery-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+
   /* ---------- Share photos ---------- */
   .share-section{
     padding:56px 0 72px;
@@ -446,6 +473,36 @@
           <h3>Wedding Menu</h3>
           <p>Six dishes to celebrate, in English and ગુજરાતી.</p>
           <span class="explore-link">View menu →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Us, so far</p>
+        <h2>Our Gallery</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="assets/gallery/gallery-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery/gallery-1.jpg" alt="Priyansh and McKenzie holding hands and showing their engagement rings by the water." loading="lazy" />
+        </a>
+        <a href="assets/gallery/gallery-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery/gallery-2.jpg" alt="Priyansh and McKenzie sitting together in front of the Austin skyline, surrounded by flowers and candles." loading="lazy" />
+        </a>
+        <a href="assets/gallery/gallery-4.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery/gallery-4.jpg" alt="Priyansh and McKenzie smiling under a colorful umbrella at Amber Fort in Jaipur, India." loading="lazy" />
+        </a>
+        <a href="assets/gallery/gallery-5.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery/gallery-5.jpg" alt="Priyansh and McKenzie taking a selfie together at the Palace of Fine Arts in San Francisco." loading="lazy" />
+        </a>
+        <a href="assets/gallery/gallery-3.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery/gallery-3.jpg" alt="Priyansh and McKenzie smiling together, reflected in an ornate mirror at a palace in India." loading="lazy" />
+        </a>
+        <a href="assets/couple-photo.jpg" target="_blank" rel="noopener">
+          <img src="assets/couple-photo.jpg" alt="Priyansh and McKenzie embracing outdoors at sunset." loading="lazy" />
         </a>
       </div>
     </div>
