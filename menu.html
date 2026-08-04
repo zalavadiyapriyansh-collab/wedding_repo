@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Priyansh &amp; McKenzie — Wedding Menu</title>
+<meta name="description" content="Priyansh &amp; McKenzie's wedding menu, in English and Gujarati." />
+<style>
+  :root{
+    --ivory: #faf3e6;
+    --ivory-deep: #f0e3cb;
+    --ink: #2b1c16;
+    --ink-soft: #5b4a3f;
+    --rose: #b23a5b;
+    --gold: #b8873a;
+    --olive: #5b6b45;
+    --rule: rgba(43,28,22,0.16);
+    --shadow: 0 30px 60px -25px rgba(43,28,22,0.35);
+    --serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+    --script: "Snell Roundhand","Segoe Script","Brush Script MT",var(--serif);
+    --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ivory: #221712;
+      --ivory-deep: #2d2019;
+      --ink: #f3e7d8;
+      --ink-soft: #d8c4ae;
+      --rose: #e17a99;
+      --gold: #dcae5b;
+      --olive: #93ab74;
+      --rule: rgba(243,231,216,0.16);
+      --shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ivory: #221712;
+    --ivory-deep: #2d2019;
+    --ink: #f3e7d8;
+    --ink-soft: #d8c4ae;
+    --rose: #e17a99;
+    --gold: #dcae5b;
+    --olive: #93ab74;
+    --rule: rgba(243,231,216,0.16);
+    --shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
+  }
+  :root[data-theme="light"]{
+    --ivory: #faf3e6;
+    --ivory-deep: #f0e3cb;
+    --ink: #2b1c16;
+    --ink-soft: #5b4a3f;
+    --rose: #b23a5b;
+    --gold: #b8873a;
+    --olive: #5b6b45;
+    --rule: rgba(43,28,22,0.16);
+    --shadow: 0 30px 60px -25px rgba(43,28,22,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:70vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding:64px 24px 32px;
+    background:
+      radial-gradient(ellipse at top left, color-mix(in srgb, var(--rose) 10%, transparent), transparent 55%),
+      radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--olive) 10%, transparent), transparent 55%);
+  }
+  .hero-inner{
+    opacity:0;
+    transform:translateY(14px);
+    animation: rise 900ms ease-out 200ms forwards;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-inner{ opacity:1; transform:none; animation:none; }
+  }
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 22px;
+    font-weight:600;
+  }
+  .names{
+    font-size:clamp(2.6rem, 8vw, 5rem);
+    line-height:1.05;
+    margin:0;
+    font-weight:400;
+    text-wrap:balance;
+  }
+  .names .amp{
+    display:block;
+    font-family:var(--script);
+    font-style:italic;
+    color:var(--rose);
+    font-size:0.62em;
+    margin:0.12em 0;
+  }
+  .tagline{
+    margin:26px auto 0;
+    max-width:36ch;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .sprig{
+    margin-top:38px;
+    color:var(--olive);
+    opacity:.85;
+  }
+
+  /* ---------- Menu section ---------- */
+  .menu-section{ padding:32px 0 64px; }
+  .section-head{ text-align:center; margin-bottom:8px; }
+  .section-head .eyebrow{ color:var(--rose); }
+  .section-head h2{
+    font-size:clamp(2rem, 5vw, 2.8rem);
+    margin:0;
+    font-weight:400;
+    text-wrap:balance;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1rem;
+    margin:14px auto 0;
+    max-width:40ch;
+  }
+
+  .dish-list{
+    list-style:none;
+    margin:40px 0 44px;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px 28px;
+    font-family:var(--sans);
+    font-size:14px;
+  }
+  .dish-list li{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid var(--rule);
+    color:var(--ink-soft);
+  }
+  .dish-list li::before{
+    content:"";
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:var(--gold);
+    flex:none;
+  }
+  @media (max-width:560px){
+    .dish-list{ grid-template-columns:1fr; }
+  }
+
+  .menu-frame{
+    position:relative;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--rule);
+    background:var(--ivory-deep);
+    margin:0 0 36px;
+  }
+  .menu-frame figcaption{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--gold);
+    text-align:center;
+    padding:16px 0 4px;
+  }
+  .menu-frame img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+
+  /* ---------- Nav ---------- */
+  .site-nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:color-mix(in srgb, var(--ivory) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    font-family:var(--sans);
+  }
+  .nav-logo{
+    font-family:var(--script);
+    font-style:italic;
+    color:var(--rose);
+    font-size:1.1rem;
+    text-decoration:none;
+  }
+  .nav-links{ display:flex; gap:24px; }
+  .nav-links a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:4px 0;
+    border-bottom:2px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active{ color:var(--rose); border-color:var(--gold); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    text-align:center;
+    padding:80px 24px 64px;
+    color:var(--ink-soft);
+    font-family:var(--sans);
+    font-size:13px;
+    letter-spacing:.02em;
+  }
+  footer .signoff{
+    font-family:var(--script);
+    font-style:italic;
+    font-size:1.6rem;
+    color:var(--rose);
+    display:block;
+    margin-bottom:14px;
+  }
+</style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="index.html">P &amp; M</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="ganesh-puja.html">Ganesh Puja</a>
+        <a class="active" href="menu.html">Menu</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner wrap">
+      <p class="eyebrow">You're invited to celebrate</p>
+      <h1 class="names">Priyansh<span class="amp">&amp;</span>McKenzie</h1>
+      <p class="tagline">A celebration of love, culture &amp; flavor.</p>
+      <div class="sprig" aria-hidden="true">
+        <svg width="72" height="20" viewBox="0 0 72 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 10 C 20 -2, 52 -2, 70 10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <circle cx="36" cy="10" r="2.5" fill="currentColor"/>
+          <circle cx="22" cy="7" r="1.5" fill="currentColor" opacity="0.6"/>
+          <circle cx="50" cy="7" r="1.5" fill="currentColor" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Dish by dish</p>
+        <h2>The Wedding Menu</h2>
+        <p>Six dishes to celebrate, in English and ગુજરાતી.</p>
+      </div>
+
+      <ul class="dish-list">
+        <li>Cashew Curry</li>
+        <li>Pav Bhaji</li>
+        <li>Dry Bhel (Suki Bhel)</li>
+        <li>Samosas</li>
+        <li>Garlic / Plain Naan</li>
+        <li>Fried Wild Rice &amp; Za'atar Squash</li>
+      </ul>
+
+      <figure class="menu-frame">
+        <figcaption>English</figcaption>
+        <img class="plate" src="assets/menu-en.webp" alt="Priyansh and McKenzie's wedding menu in English: Cashew Curry, Pav Bhaji, Dry Bhel, Samosas, Garlic and Plain Naan, Fried Wild Rice and Za'atar Squash." />
+      </figure>
+
+      <figure class="menu-frame">
+        <figcaption>ગુજરાતી</figcaption>
+        <img class="plate" src="assets/menu-gu.webp" alt="પ્રિયાંશ અને મેકેન્ઝીના લગ્નનું મેનુ ગુજરાતીમાં: કાજુ કરી, પાવ ભાજી, ડ્રાય ભેલ, સમોસા, ગાર્લિક/પ્લેઇન નાન, ફ્રાઈડ વાઈલ્ડ રાઈસ અને ઝાતર સ્કવોશ." />
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <span class="signoff">With love,</span>
+    Priyansh &amp; McKenzie
+  </footer>
+
+</body>
+</html>
