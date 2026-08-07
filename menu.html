@@ -210,19 +210,20 @@
   }
   .nav-inner{
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:space-between;
-    padding:16px 24px;
+    gap:10px;
+    padding:16px 24px 14px;
     font-family:var(--sans);
   }
   .nav-logo{
     font-family:var(--script);
     font-style:italic;
     color:var(--rose);
-    font-size:1.1rem;
+    font-size:1.4rem;
     text-decoration:none;
   }
-  .nav-links{ display:flex; gap:24px; }
+  .nav-links{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px 20px; }
   .nav-links a{
     color:var(--ink-soft);
     text-decoration:none;
