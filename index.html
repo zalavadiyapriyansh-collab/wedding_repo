@@ -330,9 +330,28 @@
     transition:transform .4s ease;
   }
   .gallery-grid a:hover img{ transform:scale(1.05); }
+  .gallery-grid a.extra{ display:none; }
+  .gallery-grid.expanded a.extra{ display:block; }
   @media (max-width:640px){
     .gallery-grid{ grid-template-columns:repeat(2, 1fr); }
   }
+  .show-more-btn{
+    display:block;
+    margin:28px auto 0;
+    padding:12px 30px;
+    border-radius:999px;
+    border:1px solid var(--rule);
+    background:transparent;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-weight:600;
+    cursor:pointer;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .show-more-btn:hover{ color:var(--rose); border-color:var(--gold); }
 
   /* ---------- Family ---------- */
   .family-section{ padding:32px 0 64px; }
@@ -357,6 +376,8 @@
     transition:transform .4s ease;
   }
   .family-grid a:hover img{ transform:scale(1.05); }
+  .family-grid a.extra{ display:none; }
+  .family-grid.expanded a.extra{ display:block; }
   @media (max-width:640px){
     .family-grid{ grid-template-columns:repeat(2, 1fr); }
   }
@@ -571,7 +592,7 @@
         <h2>Our Gallery</h2>
       </div>
 
-      <div class="gallery-grid">
+      <div class="gallery-grid" id="galleryGrid">
         <a href="assets/gallery/gallery-9.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-9.jpg" alt="Priyansh and McKenzie smiling at the camera by the water in Austin, McKenzie holding a bouquet." loading="lazy" />
         </a>
@@ -581,37 +602,38 @@
         <a href="assets/gallery/gallery-10.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-10.jpg" alt="Priyansh placing the ring on McKenzie's finger by the water in Austin." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-11.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-11.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-11.jpg" alt="Priyansh and McKenzie laughing together holding a bouquet, with the Austin skyline behind them." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-2.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-2.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-2.jpg" alt="Priyansh and McKenzie sitting together in front of the Austin skyline, surrounded by flowers and candles." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-7.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-7.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-7.jpg" alt="Priyansh and McKenzie laughing together in front of Hawa Mahal in Jaipur, India." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-1.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-1.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-1.jpg" alt="Priyansh and McKenzie holding hands and showing their engagement rings by the water." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-12.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-12.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-12.jpg" alt="Close-up of McKenzie's engagement ring resting on Priyansh's lapel." loading="lazy" />
         </a>
-        <a href="assets/couple-photo.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/couple-photo.jpg" target="_blank" rel="noopener">
           <img src="assets/couple-photo.jpg" alt="Priyansh and McKenzie embracing outdoors at sunset." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-4.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-4.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-4.jpg" alt="Priyansh and McKenzie smiling under a colorful umbrella at Amber Fort in Jaipur, India." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-5.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-5.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-5.jpg" alt="Priyansh and McKenzie taking a selfie together at the Palace of Fine Arts in San Francisco." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-6.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-6.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-6.jpg" alt="Priyansh and McKenzie walking hand in hand along the beach." loading="lazy" />
         </a>
-        <a href="assets/gallery/gallery-3.jpg" target="_blank" rel="noopener">
+        <a class="extra" href="assets/gallery/gallery-3.jpg" target="_blank" rel="noopener">
           <img src="assets/gallery/gallery-3.jpg" alt="Priyansh and McKenzie smiling together, reflected in an ornate mirror at a palace in India." loading="lazy" />
         </a>
       </div>
+      <button class="show-more-btn" onclick="toggleGrid('galleryGrid', this)">Show More Photos</button>
     </div>
   </section>
 
@@ -623,18 +645,19 @@
         <p>The people who raised us, cheered us on, and welcomed each other with open arms.</p>
       </div>
 
-      <div class="family-grid">
+      <div class="family-grid" id="familyGrid">
         <a href="assets/family/family-1.jpg" target="_blank" rel="noopener"><img src="assets/family/family-1.jpg" alt="Family photo" loading="lazy" /></a>
         <a href="assets/family/family-10.jpg" target="_blank" rel="noopener"><img src="assets/family/family-10.jpg" alt="Family photo" loading="lazy" /></a>
         <a href="assets/family/family-6.jpg" target="_blank" rel="noopener"><img src="assets/family/family-6.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-2.jpg" target="_blank" rel="noopener"><img src="assets/family/family-2.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-3.jpg" target="_blank" rel="noopener"><img src="assets/family/family-3.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-4.jpg" target="_blank" rel="noopener"><img src="assets/family/family-4.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-5.jpg" target="_blank" rel="noopener"><img src="assets/family/family-5.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-7.jpg" target="_blank" rel="noopener"><img src="assets/family/family-7.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-8.jpg" target="_blank" rel="noopener"><img src="assets/family/family-8.jpg" alt="Family photo" loading="lazy" /></a>
-        <a href="assets/family/family-9.jpg" target="_blank" rel="noopener"><img src="assets/family/family-9.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-2.jpg" target="_blank" rel="noopener"><img src="assets/family/family-2.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-3.jpg" target="_blank" rel="noopener"><img src="assets/family/family-3.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-4.jpg" target="_blank" rel="noopener"><img src="assets/family/family-4.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-5.jpg" target="_blank" rel="noopener"><img src="assets/family/family-5.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-7.jpg" target="_blank" rel="noopener"><img src="assets/family/family-7.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-8.jpg" target="_blank" rel="noopener"><img src="assets/family/family-8.jpg" alt="Family photo" loading="lazy" /></a>
+        <a class="extra" href="assets/family/family-9.jpg" target="_blank" rel="noopener"><img src="assets/family/family-9.jpg" alt="Family photo" loading="lazy" /></a>
       </div>
+      <button class="show-more-btn" onclick="toggleGrid('familyGrid', this)">Show More Photos</button>
     </div>
   </section>
 
@@ -670,5 +693,12 @@
     Priyansh &amp; McKenzie
   </footer>
 
+  <script>
+    function toggleGrid(gridId, btn) {
+      var grid = document.getElementById(gridId);
+      var expanded = grid.classList.toggle('expanded');
+      btn.textContent = expanded ? 'Show Fewer Photos' : 'Show More Photos';
+    }
+  </script>
 </body>
 </html>
