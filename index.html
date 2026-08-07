@@ -383,6 +383,45 @@
     .family-grid{ grid-template-columns:repeat(2, 1fr); }
   }
 
+  .people-head{ text-align:center; margin:56px 0 0; }
+  .people-head .eyebrow{ color:var(--rose); }
+  .people-head h3{
+    font-size:clamp(1.5rem, 4vw, 2rem);
+    margin:0;
+    font-weight:400;
+  }
+  .people-grid{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+  }
+  .people-card{
+    padding:28px 26px;
+    border:1px solid var(--rule);
+    border-radius:6px;
+    background:var(--ivory-deep);
+    text-align:center;
+  }
+  .people-card h4{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--rose);
+    font-weight:600;
+    margin:0 0 10px;
+  }
+  .people-card p{
+    font-size:1.05rem;
+    margin:0;
+    color:var(--ink);
+    line-height:1.5;
+  }
+  @media (max-width:640px){
+    .people-grid{ grid-template-columns:1fr; }
+  }
+
   /* ---------- Missing you ---------- */
   .missing-section{
     padding:64px 0;
@@ -668,6 +707,30 @@
         <a href="assets/family/family-2.jpg" target="_blank" rel="noopener"><img src="assets/family/family-2.jpg" alt="Family photo" loading="lazy" /></a>
         <a href="assets/family/family-3.jpg" target="_blank" rel="noopener"><img src="assets/family/family-3.jpg" alt="Family photo" loading="lazy" /></a>
         <a href="assets/family/family-4.jpg" target="_blank" rel="noopener"><img src="assets/family/family-4.jpg" alt="Family photo" loading="lazy" /></a>
+      </div>
+
+      <div class="people-head">
+        <p class="eyebrow">Celebrating with us</p>
+        <h3>Family &amp; Friends Joining</h3>
+      </div>
+
+      <div class="people-grid">
+        <div class="people-card">
+          <h4>Bride's Parents</h4>
+          <p>Todd &amp; Tammie</p>
+        </div>
+        <div class="people-card">
+          <h4>Groom's Parents</h4>
+          <p>Ghanshyam &amp; Rasila</p>
+        </div>
+        <div class="people-card">
+          <h4>Bride's Closest Companions</h4>
+          <p>McKayla (sister), Isabel, Grace, Rachelle, Lacey</p>
+        </div>
+        <div class="people-card">
+          <h4>Groom's Closest Companions</h4>
+          <p>Vinas (brother), Neel, Krutarth, Parthiv, Kenil, Ravi</p>
+        </div>
       </div>
     </div>
   </section>
